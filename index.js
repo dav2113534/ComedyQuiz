@@ -1,33 +1,33 @@
 var state = {
     quiz: [{
-        "Questions": "What genre of Comedy do you enjoy?",
+        "Question": "What genre of Comedy do you enjoy?",
         "choices": ["Satire", "Observational", "Alternative", "Anecdotal"]
     }, {
-        "Questions": "Which comedian are you most fimiliar with?",
+        "Question": "Which comedian are you most fimiliar with?",
         "choices": ["Dave Chappelle", "Louis C.K", "Gabriel Iglesias", "Aziz Ansari"]
     }, {
-        "Questions": "",
+        "Question": "",
         "choices": []
     }, {
-        "Questions": "",
+        "Question": "",
         "choices": []
     }, {
-        "Questions": "",
+        "Question": "",
         "choices": []
     }, {
-        "Questions": "",
+        "Question": "",
         "choices": []
     }, {
-        "Questions": "",
+        "Question": "",
         "choices": []
     }, {
-        "Questions": "",
+        "Question": "",
         "choices": []
     }, {
-        "Questions": "",
+        "Question": "",
         "choices": []
     }, {
-        "Questions": "",
+        "Question": "",
         "choices": []
     }],
     currentQuestion: 0,
@@ -39,7 +39,7 @@ var state = {
 }
 
 //Saves choices 
-var selected = function select(choice) {
+function select(choice) {
     var choiceAlreadySelected = state.currentQuestionChoice() !== undefined;
     if (choiceAlreadySelected) {
         return false;
@@ -49,7 +49,7 @@ var selected = function select(choice) {
     }
 }
 
-var nextQ = function nextQuestion(state) {
+function nextQuestion(state) {
     var next = state.currentQuestion + 1;
     if (state.currentQuestion !== state.quiz.length - 1) {
         return next;
@@ -57,3 +57,25 @@ var nextQ = function nextQuestion(state) {
         return false;
     }
 }
+
+function renderChoice(choice, index) {
+    return (
+        '<li>' +
+        '<input type="radio" name="choices" value="' + index + '" required>' +
+        '<label>' + choice + '</label>' +
+        '</li>'
+    )
+}
+
+
+function render() {
+    var display = state.quiz[state.currentQuestion];
+    $('.questions').text(display.questions);
+    renderChoices(display.choices);
+}
+
+function renderChoices(choices) {
+    var string = choices.map(renderChoice).join("");
+    $('.choices').html(string);
+}
+
