@@ -48,3 +48,12 @@ var selected = function select(choice) {
         state.choices = choice;
     }
 }
+
+var nextQ = function nextQuestion(state) {
+    var next = state.currentQuestion + 1;
+    if (state.currentQuestion !== state.quiz.length - 1) {
+        return next;
+    } else {
+        return false;
+    }
+}
