@@ -1,7 +1,7 @@
 var state = {
     quiz: [{
-        "Questions": "",
-        "choices": []
+        "Questions": "What genre of Comedy do you enjoy?",
+        "choices": ["Satire", "Observational", "Alternative", "Anecdotal"]
     }, {
         "Questions": "",
         "choices": []
@@ -29,5 +29,6 @@ var state = {
     }, {
         "Questions": "",
         "choices": ""
-    }]
+    }],
+
 }
