@@ -30,7 +30,7 @@ var state = {
         Question: "",
         choices: []
     }],
-    currentQuestion: 1,
+    currentQuestion: 0,
     choices: {},
     currentQuestionChoice: function () {
         return this.choices[this.currentQuestion];
@@ -46,8 +46,19 @@ function select(choice) {
     } else {
         state.choices[state.currentQuestion] = choice;
         state.choices = choice;
+        console.log("choice saved")
     }
 }
+
+// //Goes to the next set of questions
+// function nextSetOfQuestions() {
+//     var next = state.quiz[0].Question + 1;
+//     if (state.currentQuestion !== state.quiz.length - 1) {
+//         return next;
+//     } else {
+//         return false;
+//     }
+// }
 
 //Goes to the next question 
 function nextQuestion(state) {
@@ -58,6 +69,7 @@ function nextQuestion(state) {
         return false;
     }
 }
+
 
 //Goes to next question 
 function goNext(state) {
@@ -85,6 +97,18 @@ function render() {
     var display = state.quiz[state.currentQuestion];
     $('.questions').text(display.Question);
     renderChoices(display.choices);
+    $('.buttons').html(renderButton(state));
+}
+
+function renderButton(state) {
+    if (state.currentQuestionChoice() === undefined) {
+        return '<input class="beginButton" type="button" value="Begin">' +
+            '<input class="submitButton" type="button" value="Submit">' +
+            '<input class="nextButton" type="button" value="Next">';
+    } else {
+        return '<input class="beginButton" type="button" value="Begin">' +
+            '<input class="nextButton" type="button" value="Next">';
+    }
 }
 
 //displays choices 
@@ -93,8 +117,8 @@ function renderChoices(choices) {
     $('.choices').html(string);
 }
 
-$('.beginButton').click(function (x) {
-    x.preventDefault();
+//Begins the quiz 
+$('.beginButton').click(function () {
     render();
     $('.beginButton').hide();
 
@@ -104,9 +128,10 @@ $('.beginButton').click(function (x) {
 $('.submitButton').click(function (x) {
     var choice = $('input[name=choices]:checked').val();
     select(choice);
+
 })
 
 $('.nextButton').click(function () {
-    goNext();
-    nextQuestion();
+    goNext(state);
+    render();
 })
