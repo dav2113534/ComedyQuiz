@@ -103,3 +103,8 @@ $('.submitButton').click(function (x) {
     var choice = $('input[name=choices]:checked').val();
     select(choice);
 })
+
+$('nextButton').click(function(){
+    goNext();
+    nextQuestion();
+})
