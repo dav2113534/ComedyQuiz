@@ -30,7 +30,7 @@ var state = {
         Question: "",
         choices: []
     }],
-    currentQuestion: 0,
+    currentQuestion: 1,
     choices: {},
     currentQuestionChoice: function () {
         return this.choices[this.currentQuestion];
@@ -94,7 +94,9 @@ function renderChoices(choices) {
 }
 
 $('.beginButton').click(function (x) {
+    x.preventDefault();
     render();
+    $('.beginButton').hide();
 
 })
 
@@ -104,7 +106,7 @@ $('.submitButton').click(function (x) {
     select(choice);
 })
 
-$('nextButton').click(function(){
+$('.nextButton').click(function () {
     goNext();
     nextQuestion();
 })
