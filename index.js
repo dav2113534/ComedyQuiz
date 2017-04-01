@@ -1,34 +1,34 @@
 var state = {
     quiz: [{
-        "Question": "What genre of Comedy do you enjoy?",
-        "choices": ["Satire", "Observational", "Alternative", "Anecdotal"]
+        Question: "What genre of Comedy do you enjoy?",
+        choices: ["Satire", "Observational", "Alternative", "Anecdotal"]
     }, {
-        "Question": "Which comedian are you most fimiliar with?",
-        "choices": ["Dave Chappelle", "Louis C.K", "Gabriel Iglesias", "Aziz Ansari"]
+        Question: "Which comedian are you most fimiliar with?",
+        choices: ["Dave Chappelle", "Louis C.K", "Gabriel Iglesias", "Aziz Ansari"]
     }, {
-        "Question": "",
-        "choices": []
+        Question: "",
+        choices: []
     }, {
-        "Question": "",
-        "choices": []
+        Question: "",
+        choices: []
     }, {
-        "Question": "",
-        "choices": []
+        Question: "",
+        choices: []
     }, {
-        "Question": "",
-        "choices": []
+        Question: "",
+        choices: []
     }, {
-        "Question": "",
-        "choices": []
+        Question: "",
+        choices: []
     }, {
-        "Question": "",
-        "choices": []
+        Question: "",
+        choices: []
     }, {
-        "Question": "",
-        "choices": []
+        Question: "",
+        choices: []
     }, {
-        "Question": "",
-        "choices": []
+        Question: "",
+        choices: []
     }],
     currentQuestion: 0,
     choices: {},
@@ -83,7 +83,7 @@ function renderChoice(choice, index) {
 //displays questions 
 function render() {
     var display = state.quiz[state.currentQuestion];
-    $('.questions').text(display.question);
+    $('.questions').text(display.Question);
     renderChoices(display.choices);
 }
 
@@ -95,6 +95,7 @@ function renderChoices(choices) {
 
 $('.beginButton').click(function (x) {
     render();
+
 })
 
 //respond to the user choice selection
