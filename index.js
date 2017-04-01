@@ -30,7 +30,7 @@ var state = {
         Question: "",
         choices: []
     }],
-    currentQuestion: 0,
+    currentQuestion: -1,
     choices: {},
     currentQuestionChoice: function () {
         return this.choices[this.currentQuestion];
@@ -94,21 +94,32 @@ function renderChoice(choice, index) {
 
 //displays questions 
 function render() {
+    console.log("begin?");
     var display = state.quiz[state.currentQuestion];
-    $('.questions').text(display.Question);
-    renderChoices(display.choices);
+    if (display !== undefined) {
+        $('.questions').text(display.Question);
+        renderChoices(display.choices);
+    }
     $('.buttons').html(renderButton(state));
+    $('.submitButton').click(submitButtonHandler);
+    $('.beginButton').click(beingButtonHandler);
+    $('.nextButton').click(goNextHandler);
 }
+var beginButtonTemplate = '<input class="beginButton" type="button" value="Begin">';
+var submitButtonTemplate = '<input class="submitButton" type="button" value="Submit">';
+var nextButtonTemplate = '<input class="nextButton" type="button" value="Next">';
 
 function renderButton(state) {
-    if (state.currentQuestionChoice() === undefined) {
-        return '<input class="beginButton" type="button" value="Begin">' +
-            '<input class="submitButton" type="button" value="Submit">' +
-            '<input class="nextButton" type="button" value="Next">';
+    var buttons = [];
+    //check this out 
+    if (state.currentQuestion === -1) {
+        buttons.push(beginButtonTemplate);
+    } else if (state.currentQuestionChoice() === undefined) {
+        buttons.push(submitButtonTemplate);
     } else {
-        return '<input class="beginButton" type="button" value="Begin">' +
-            '<input class="nextButton" type="button" value="Next">';
+        buttons.push(nextButtonTemplate);
     }
+    return buttons.join("");
 }
 
 //displays choices 
@@ -118,20 +129,24 @@ function renderChoices(choices) {
 }
 
 //Begins the quiz 
-$('.beginButton').click(function () {
+function beingButtonHandler() {
     render();
     $('.beginButton').hide();
-
-})
+};
 
 //respond to the user choice selection
-$('.submitButton').click(function (x) {
+
+
+function submitButtonHandler(x) {
     var choice = $('input[name=choices]:checked').val();
     select(choice);
 
-})
+}
 
-$('.nextButton').click(function () {
+
+function goNextHandler() {
     goNext(state);
     render();
-})
+}
+
+render();
