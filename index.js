@@ -49,6 +49,7 @@ function select(choice) {
     }
 }
 
+//Goes to the next question 
 function nextQuestion(state) {
     var next = state.currentQuestion + 1;
     if (state.currentQuestion !== state.quiz.length - 1) {
@@ -58,6 +59,18 @@ function nextQuestion(state) {
     }
 }
 
+//Goes to next question 
+function goNext(state) {
+    var next = nextQuestion(state);
+    if (next !== false) {
+        state.currentQuestion = next;
+        render();
+    } else {
+        console.log("its done")
+    }
+}
+
+//creates the check boxes for choices 
 function renderChoice(choice, index) {
     return (
         '<li>' +
@@ -67,15 +80,25 @@ function renderChoice(choice, index) {
     )
 }
 
-
+//displays questions 
 function render() {
     var display = state.quiz[state.currentQuestion];
-    $('.questions').text(display.questions);
+    $('.questions').text(display.question);
     renderChoices(display.choices);
 }
 
+//displays choices 
 function renderChoices(choices) {
     var string = choices.map(renderChoice).join("");
     $('.choices').html(string);
 }
 
+$('.beginButton').click(function (x) {
+    render();
+})
+
+//respond to the user choice selection
+$('.submitButton').click(function (x) {
+    var choice = $('input[name=choices]:checked').val();
+    select(choice);
+})
