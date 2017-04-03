@@ -42,7 +42,6 @@ function select(choice) {
         return false;
     } else {
         state.choices[state.currentQuestion] = choice;
-        state.choices = choice;
         console.log("choice saved")
     }
 }
