@@ -9,26 +9,23 @@ var state = {
         Question: "Which subjects would you consider to be funny",
         choices: ["Personal Stories", "Stereotypes", "Everyday Life", "Insults"]
     }, {
-        Question: "",
-        choices: []
+        Question: "Do you enjoy crude humor?",
+        choices: ["Yes", "No"]
     }, {
-        Question: "",
-        choices: []
+        Question: "Do you prefer clean or dirty comedy?",
+        choices: ["Clean", "Dirty"]
     }, {
-        Question: "",
-        choices: []
+        Question: "Would you enjoy political humor?",
+        choices: ["Yes", "No"]
     }, {
-        Question: "",
-        choices: []
+        Question: "How do you feel about racial sterotypes?",
+        choices: ["Don't like em", "Don't mind it"]
     }, {
-        Question: "",
-        choices: []
+        Question: "Do you enjoy improv?",
+        choices: ["Yes", "No"]
     }, {
-        Question: "",
-        choices: []
-    }, {
-        Question: "",
-        choices: []
+        Question: "Do you enjoy both music and comedy",
+        choices: ["Yes", "No"]
     }],
     currentQuestion: -1,
     choices: {},
@@ -142,4 +139,3 @@ function goNextHandler() {
 }
 
 render();
-
