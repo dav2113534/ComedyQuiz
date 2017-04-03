@@ -50,15 +50,6 @@ function select(choice) {
     }
 }
 
-// //Goes to the next set of questions
-// function nextSetOfQuestions() {
-//     var next = state.quiz[0].Question + 1;
-//     if (state.currentQuestion !== state.quiz.length - 1) {
-//         return next;
-//     } else {
-//         return false;
-//     }
-// }
 
 //Goes to the next question 
 function nextQuestion(state) {
@@ -94,7 +85,6 @@ function renderChoice(choice, index) {
 
 //displays questions 
 function render() {
-    console.log("begin?");
     var display = state.quiz[state.currentQuestion];
     if (display !== undefined) {
         $('.questions').text(display.Question);
@@ -114,11 +104,13 @@ function renderButton(state) {
     //check this out 
     if (state.currentQuestion === -1) {
         buttons.push(beginButtonTemplate);
-    } else if (state.currentQuestionChoice() === undefined) {
-        buttons.push(submitButtonTemplate);
-    } else {
-        buttons.push(nextButtonTemplate);
     }
+    if (state.currentQuestionChoice() === undefined) {
+        buttons.push(submitButtonTemplate);
+    }
+    if (buttons.push(nextButtonTemplate));
+
+
     return buttons.join("");
 }
 
@@ -134,10 +126,8 @@ function beingButtonHandler() {
     $('.beginButton').hide();
 };
 
-//respond to the user choice selection
 
-
-function submitButtonHandler(x) {
+function submitButtonHandler() {
     var choice = $('input[name=choices]:checked').val();
     select(choice);
 
