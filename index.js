@@ -72,9 +72,19 @@ function goNext(state) {
 
 //creates the check boxes for choices 
 function renderChoice(choice, index) {
+    var checked = '';
+    if (state.currentQuestionChoice() === index.toString()) {
+        checked = 'checked = checked';
+    }
+    var disabled = '';
+
+    if (state.currentQuestionChoice() !== undefined) {
+        disabled = 'disabled';
+
+    }
     return (
         '<li>' +
-        '<input type="radio" name="choices" value="' + index + '" required>' +
+        '<input type="radio"' + disabled + ' name="choices" ' + checked + ' value="' + index + '" required>' +
         '<label>' + choice + '</label>' +
         '</li>'
     )
@@ -101,34 +111,45 @@ function renderButton(state) {
     //check this out 
     if (state.currentQuestion === -1) {
         buttons.push(beginButtonTemplate);
-    }
-    if (state.currentQuestionChoice() === undefined) {
+    } else if (state.currentQuestionChoice() === undefined) {
         buttons.push(submitButtonTemplate);
-        console.log('hi');
-    }
-    if (state.currentQuestionChoice() === undefined) {
+
+    } else {
         (buttons.push(nextButtonTemplate));
-        console.log('hi2');
     }
     return buttons.join("");
 }
+
+//I need to create the last page of the quiz that 
+//gives the user a recommendation
+
+// function final(){
+//     var complete = state.quiz[]
+// }
+
+
 
 //displays choices 
 function renderChoices(choices) {
     var string = choices.map(renderChoice).join("");
     $('.choices').html(string);
+
 }
 
 //Begins the quiz 
 function beginButtonHandler() {
+    goNext(state);
     render();
-    $('.beginButton').hide();
+
+
 };
 
 
 function submitButtonHandler() {
     var choice = $('input[name=choices]:checked').val();
     select(choice);
+    render();
+
 
 }
 
