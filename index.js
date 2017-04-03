@@ -6,8 +6,8 @@ var state = {
         Question: "Which comedian are you most fimiliar with?",
         choices: ["Dave Chappelle", "Louis C.K", "Gabriel Iglesias", "Aziz Ansari"]
     }, {
-        Question: "",
-        choices: []
+        Question: "Which subjects would you consider to be funny",
+        choices: ["Personal Stories", "Stereotypes", "Everyday Life", "Insults"]
     }, {
         Question: "",
         choices: []
@@ -91,8 +91,8 @@ function render() {
         renderChoices(display.choices);
     }
     $('.buttons').html(renderButton(state));
+    $('.beginButton').click(beginButtonHandler);
     $('.submitButton').click(submitButtonHandler);
-    $('.beginButton').click(beingButtonHandler);
     $('.nextButton').click(goNextHandler);
 }
 var beginButtonTemplate = '<input class="beginButton" type="button" value="Begin">';
@@ -107,10 +107,12 @@ function renderButton(state) {
     }
     if (state.currentQuestionChoice() === undefined) {
         buttons.push(submitButtonTemplate);
+        console.log('hi');
     }
-    if (buttons.push(nextButtonTemplate));
-
-
+    if (state.currentQuestionChoice() === undefined) {
+        (buttons.push(nextButtonTemplate));
+        console.log('hi2');
+    }
     return buttons.join("");
 }
 
@@ -121,7 +123,7 @@ function renderChoices(choices) {
 }
 
 //Begins the quiz 
-function beingButtonHandler() {
+function beginButtonHandler() {
     render();
     $('.beginButton').hide();
 };
@@ -140,3 +142,4 @@ function goNextHandler() {
 }
 
 render();
+
