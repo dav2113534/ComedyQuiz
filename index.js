@@ -119,16 +119,34 @@ function renderButton(state) {
     return buttons.join("");
 }
 
-//I need to create the last page of the quiz that 
-//gives the user a recommendation
+/* I need to create the last page of the quiz that 
+gives the user a recommendation 
+Your goal is to complete getting youtube results first 
+without the interface(message me when done). 
+And then put the interface on top of function is going 
+to get this information.
+*/
 
-// function final(){
-//     var complete = state.quiz[]
+
+
+function results(state) {
+    var choicesSelected = state.choices;
+}
+
+// var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
+
+// function getDataFromApi(query, callback) {
+//     var getJson = {
+//         part: "snippet",
+//         key: "AIzaSyCxu-HaWg7nUN9KkUD3ozKgOQdZHU3Pyy0",
+//         q: ""
+//     }
+//     $.getJSON(youtubeUrl, getJson, callback)
 // }
 
 
+// displays choices
 
-//displays choices 
 function renderChoices(choices) {
     var string = choices.map(renderChoice).join("");
     $('.choices').html(string);
@@ -139,6 +157,7 @@ function renderChoices(choices) {
 function beginButtonHandler() {
     goNext(state);
     render();
+
 
 
 };
