@@ -127,10 +127,18 @@ And then put the interface on top of function is going
 to get this information.
 */
 
-
+var recommendation = [{
+    name: "Louis C.K",
+    choices: [1, 1, 2, 0, 1, 0, 1, 1, 1],
+}, {
+    name: "Dave Chapelle",
+    choices: []
+}];
 
 function results(state) {
     var choicesSelected = state.choices;
+    If(choicesSelected)
+
 }
 
 // var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
