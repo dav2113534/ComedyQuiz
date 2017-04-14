@@ -4,7 +4,7 @@ function select(choice) {
     if (choiceAlreadySelected) {
         return false;
     } else {
-        state.choices[state.currentQuestion] = choice;
+        state.choices[state.currentQuestion] = parseInt(choice);
         console.log("choice saved")
     }
 }
@@ -105,9 +105,9 @@ var recommendation = [{
 }];
 
 //compares choices array to recommendation array
-function match(arr) {
-    return arr.reduce(function (acc, val, index) {
-        if (val === state.choices[index]) {
+function match(recommendation, choices) {
+    return recommendation.choices.reduce(function (acc, val, index) {
+        if (val === choices[index]) {
             return acc += 1;
         }
         return acc;
@@ -115,17 +115,18 @@ function match(arr) {
 }
 
 // recommendation is a array object
-function bestMatch() {
-    var recs = recommendation[0].choices;
-    var matches = recommendation.map(function (recs) {
-        return match(recs)
-    })
-    var clone = JSON.parse(JSON.stringify(state.choices));
+function bestMatch(choices) {
+    var matchChoices = function (arr) {
+        return match(arr, choices);
+    };
+    var matches = recommendation.map(matchChoices);
+
+    var clone = JSON.parse(JSON.stringify(matches));
     var max = clone.sort(function (a, b) {
-        return a - b;
+        return b - a;
     })[0]
     var index = matches.indexOf(max);
-    return recs[index];
+    return recommendation[index];
 }
 
 
