@@ -1,10 +1,10 @@
 var state = {
     quiz: [{
         Question: "What genre of Comedy do you enjoy?",
-        choices: ["Satire", "Observational", "Alternative", "Anecdotal"]
+        choices: ["Satire", "Observational", "Alternative", "Improvisational "]
     }, {
         Question: "Which comedian are you most fimiliar with?",
-        choices: ["Dave Chappelle", "Louis C.K", "Gabriel Iglesias", "Aziz Ansari"]
+        choices: ["Dave Chappelle", "Louis C.K", "Jim Gaffigan", "Robin Williams"]
     }, {
         Question: "Which subjects would you consider to be funny",
         choices: ["Personal Stories", "Stereotypes", "Everyday Life", "Insults"]

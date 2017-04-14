@@ -1,5 +1,3 @@
-
-
 //Saves choices 
 function select(choice) {
     var choiceAlreadySelected = state.currentQuestionChoice() !== undefined;
@@ -100,21 +98,35 @@ var recommendation = [{
     choices: [0, 0, 1, 0, 1, 0, 1, 1, 1]
 }, {
     name: "Jim Gaffigan",
-    choices: []
+    choices: [1, 2, 2, 1, 0, 1, 0, 0, 0]
 }, {
-    name: "",
-    choices: ""
+    name: "Robin Williams",
+    choices: [3, 3, 1, 0, 1, 0, 1, 0, 1]
 }];
 
-function getComedian() {
-
-    for (var prop in recommendation) {
-        if (recommendation[prop] > max) {
-            max = recommendation[prop]
+function calMatch(arr) {
+    return arr.reduce(function (acc, val, index) {
+        if (val === choices[index]) {
+            return acc += 1;
         }
-
-    }
+        return acc;
+    }, 0)
 }
+
+function bestMatch() {
+    var matches = recommendation.map(function (recommend) {
+        return calMatch(recommend)
+    })
+
+    var clone = JSON.parse(JSON.stringify(choices));
+    var max = clone.sort(function (a, b) {
+        return b - a;
+    })[0]
+
+    var index = matches.indexOf(max);
+    return recommendation[index];
+}
+
 
 // var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
 
