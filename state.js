@@ -28,7 +28,7 @@ var state = {
         choices: ["Yes", "No"]
     }],
     currentQuestion: -1,
-    choices: {},
+    choices: [],
     currentQuestionChoice: function () {
         return this.choices[this.currentQuestion];
     }

@@ -104,29 +104,30 @@ var recommendation = [{
     choices: [3, 3, 1, 0, 1, 0, 1, 0, 1]
 }];
 
-function calMatch(arr) {
+function match(arr) {
     return arr.reduce(function (acc, val, index) {
-        if (val === choices[index]) {
+        if (val === state.choices[index]) {
             return acc += 1;
         }
         return acc;
     }, 0)
 }
 
-function bestMatch() {
-    var matches = recommendation.map(function (recommend) {
-        return calMatch(recommend)
-    })
 
-    var clone = JSON.parse(JSON.stringify(choices));
-    var max = clone.sort(function (a, b) {
-        return b - a;
-    })[0]
 
-    var index = matches.indexOf(max);
-    return recommendation[index];
-}
 
+// function bestMatch(){
+//   var matches = variants.map(function(variant) { return calculateMatch(variant);
+
+//   })
+
+//   var clone = JSON.parse(JSON.stringify(example));
+//   var max =  clone.sort(function(a,b) { return b - a;})[0]
+
+//   var index = matches.indexOf(max);
+//   return variants[index];
+
+// }
 
 // var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
 
