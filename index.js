@@ -104,6 +104,7 @@ var recommendation = [{
     choices: [3, 3, 1, 0, 1, 0, 1, 0, 1]
 }];
 
+//compares choices array to recommendation array
 function match(arr) {
     return arr.reduce(function (acc, val, index) {
         if (val === state.choices[index]) {
@@ -113,6 +114,19 @@ function match(arr) {
     }, 0)
 }
 
+// recommendation is a array object
+function bestMatch() {
+    var recs = recommendation[0].choices;
+    var matches = recommendation.map(function (recs) {
+        return match(recs)
+    })
+    var clone = JSON.parse(JSON.stringify(state.choices));
+    var max = clone.sort(function (a, b) {
+        return a - b;
+    })[0]
+    var index = matches.indexOf(max);
+    return recs[index];
+}
 
 
 
