@@ -66,7 +66,7 @@ function render() {
     }
     if (state.recommend !== undefined) {
         $('.recommendation').text(state.recommend);
-        renderRecommendations();
+        names;
 
     }
 
@@ -74,7 +74,7 @@ function render() {
     $('.beginButton').click(beginButtonHandler);
     $('.submitButton').click(submitButtonHandler);
     $('.nextButton').click(goNextHandler);
-    $('.finishButton').click();
+
 
 }
 var beginButtonTemplate = '<input class="beginButton" type="button" value="Begin">';
@@ -139,13 +139,19 @@ function bestMatch(choices) {
     return recommendation[index];
 }
 
-function renderRecommendations(index) {
-    if (bestMatch() === index.toString()) {
-        return state.recommend;
-    } else {
-        console.log('not working')
-    }
-}
+var names = state.recommend.map(function (x) {
+    return x.name.join("") + " Would be someone you should check out!!"
+})
+
+
+// function renderRecommendations(index) {
+//     var txt = "";
+//     if (bestMatch() === index.toString()) {
+//         return state.recommend;
+//     } else {
+//         console.log('not working')
+//     }
+// }
 
 
 
