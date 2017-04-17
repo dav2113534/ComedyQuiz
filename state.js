@@ -29,6 +29,7 @@ var state = {
     }],
     currentQuestion: -1,
     choices: [],
+    recommend: {},
     currentQuestionChoice: function () {
         return this.choices[this.currentQuestion];
     }

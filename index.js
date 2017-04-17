@@ -28,9 +28,14 @@ function goNext(state) {
         state.currentQuestion = next;
         render();
     } else {
-        console.log("its done")
+        //this needs to display the recommendations
+        //after the quiz is complete
+        state.recommend = bestMatch(state.choices);
+        render();
     }
 }
+
+
 
 //creates the check boxes for choices 
 function renderChoice(choice, index) {
@@ -59,36 +64,41 @@ function render() {
         $('.questions').text(display.Question);
         renderChoices(display.choices);
     }
+    if (state.recommend !== undefined) {
+        $('.recommendation').text(state.recommend);
+        renderRecommendations();
+
+    }
+
     $('.buttons').html(renderButton(state));
     $('.beginButton').click(beginButtonHandler);
     $('.submitButton').click(submitButtonHandler);
     $('.nextButton').click(goNextHandler);
+    $('.finishButton').click();
+
 }
 var beginButtonTemplate = '<input class="beginButton" type="button" value="Begin">';
 var submitButtonTemplate = '<input class="submitButton" type="button" value="Submit">';
 var nextButtonTemplate = '<input class="nextButton" type="button" value="Next">';
+var finishButtonTemplate = '<input class="finishButton" type="button" value="Finish">';
 
 function renderButton(state) {
     var buttons = [];
-    //check this out 
+
     if (state.currentQuestion === -1) {
         buttons.push(beginButtonTemplate);
     } else if (state.currentQuestionChoice() === undefined) {
         buttons.push(submitButtonTemplate);
 
+    } else if (bestMatch() === undefined) {
+        buttons.push(finishButtonTemplate)
     } else {
         (buttons.push(nextButtonTemplate));
     }
     return buttons.join("");
 }
 
-/* I need to create the last page of the quiz that 
-gives the user a recommendation 
-Your goal is to complete getting youtube results first 
-without the interface(message me when done). 
-And then put the interface on top of function is going 
-to get this information.
-*/
+
 
 var recommendation = [{
     name: "Louis C.K",
@@ -129,31 +139,26 @@ function bestMatch(choices) {
     return recommendation[index];
 }
 
+function renderRecommendations(index) {
+    if (bestMatch() === index.toString()) {
+        return state.recommend;
+    } else {
+        console.log('not working')
+    }
+}
 
 
-// function bestMatch(){
-//   var matches = variants.map(function(variant) { return calculateMatch(variant);
 
-//   })
+var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
 
-//   var clone = JSON.parse(JSON.stringify(example));
-//   var max =  clone.sort(function(a,b) { return b - a;})[0]
-
-//   var index = matches.indexOf(max);
-//   return variants[index];
-
-// }
-
-// var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
-
-// function getDataFromApi(query, callback) {
-//     var getJson = {
-//         part: "snippet",
-//         key: "AIzaSyCxu-HaWg7nUN9KkUD3ozKgOQdZHU3Pyy0",
-//         q: ""
-//     }
-//     $.getJSON(youtubeUrl, getJson, callback)
-// }
+function getDataFromApi(query, callback) {
+    var getJson = {
+        part: "snippet",
+        key: "AIzaSyCxu-HaWg7nUN9KkUD3ozKgOQdZHU3Pyy0",
+        q: ""
+    }
+    $.getJSON(youtubeUrl, getJson, callback)
+}
 
 
 // displays choices
@@ -180,6 +185,10 @@ function submitButtonHandler() {
     render();
 
 
+}
+
+function recommendHandler() {
+    bestMatch();
 }
 
 
