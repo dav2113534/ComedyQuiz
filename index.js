@@ -28,8 +28,11 @@ function goNext(state) {
         state.currentQuestion = next;
         render();
     } else {
+
         //this needs to display the recommendations
         //after the quiz is complete
+        // TODO: Make sure that current question is not set to last question
+        //Change the state and not the UI 
         state.recommend = bestMatch(state.choices);
         render();
     }
