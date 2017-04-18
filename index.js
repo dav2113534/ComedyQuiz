@@ -64,9 +64,7 @@ function render() {
         $('.questions').text(display.Question);
         renderChoices(display.choices);
     } else if (state.hasRecommendations()) {
-        $('.recommendation').text(state.recommend);
-        renderRecommendations();
-
+        $('.recommendation').text(renderRecommendations(state));
     }
 
     $('.buttons').html(renderButton(state));
@@ -138,18 +136,16 @@ function bestMatch(choices) {
     return recommendation[index];
 }
 
-// var names = state.recommend.map(function (x) {
-//     return x.name.join("") + " Would be someone you should check out!!"
-// })
 
 
-function renderRecommendations(index) {
-    var txt = "";
-    if (bestMatch() === index.toString()) {
-        return state.recommend;
-    } else {
-        console.log('not working')
-    }
+function renderRecommendations(state) {
+    // var name = state.recommend.name;
+    // var txt = "";
+    // if (state.recommend === index.toString()) {
+    return state.recommend.name + " is someone you want to check out!";
+    // } else {
+    //     console.log('not working')
+    // }
 }
 
 
