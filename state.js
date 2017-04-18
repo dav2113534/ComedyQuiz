@@ -29,9 +29,13 @@ var state = {
     }],
     currentQuestion: -1,
     choices: [],
-    recommend: [],
+    recommend: undefined,
     currentQuestionChoice: function () {
         return this.choices[this.currentQuestion];
+    },
+    //created function to check if recommend is undefined
+    hasRecommendations: function () {
+        return this.recommend !== undefined;
     }
 
 }

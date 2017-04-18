@@ -63,10 +63,9 @@ function render() {
     if (display !== undefined) {
         $('.questions').text(display.Question);
         renderChoices(display.choices);
-    }
-    if (state.recommend !== undefined) {
+    } else if (state.hasRecommendations()) {
         $('.recommendation').text(state.recommend);
-        names;
+        renderRecommendations();
 
     }
 
@@ -90,7 +89,7 @@ function renderButton(state) {
     } else if (state.currentQuestionChoice() === undefined) {
         buttons.push(submitButtonTemplate);
 
-    } else if (bestMatch() === undefined) {
+    } else if (state.hasRecommendations()) {
         buttons.push(finishButtonTemplate)
     } else {
         (buttons.push(nextButtonTemplate));
@@ -139,19 +138,19 @@ function bestMatch(choices) {
     return recommendation[index];
 }
 
-var names = state.recommend.map(function (x) {
-    return x.name.join("") + " Would be someone you should check out!!"
-})
+// var names = state.recommend.map(function (x) {
+//     return x.name.join("") + " Would be someone you should check out!!"
+// })
 
 
-// function renderRecommendations(index) {
-//     var txt = "";
-//     if (bestMatch() === index.toString()) {
-//         return state.recommend;
-//     } else {
-//         console.log('not working')
-//     }
-// }
+function renderRecommendations(index) {
+    var txt = "";
+    if (bestMatch() === index.toString()) {
+        return state.recommend;
+    } else {
+        console.log('not working')
+    }
+}
 
 
 
