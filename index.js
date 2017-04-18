@@ -187,7 +187,9 @@ function beginButtonHandler() {
 
 function submitButtonHandler() {
     var choice = $('input[name=choices]:checked').val();
-    select(choice);
+    if (choice !== undefined) {
+        select(choice);
+    }
     render();
 
 
