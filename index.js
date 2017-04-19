@@ -27,8 +27,8 @@ function goNext(state) {
     if (next !== false) {
         state.currentQuestion = next;
         render();
-    } else {
-
+    } 
+    else {
         //this needs to display the recommendations
         //after the quiz is complete
         // TODO: Make sure that current question is not set to last question
