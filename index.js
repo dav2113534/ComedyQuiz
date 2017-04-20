@@ -27,14 +27,13 @@ function goNext(state) {
     if (next !== false) {
         state.currentQuestion = next;
         render();
-    } 
-    else {
+    } else {
         //this needs to display the recommendations
         //after the quiz is complete
         // TODO: Make sure that current question is not set to last question
         //Change the state and not the UI 
-        state.recommend = bestMatch(state.choices);
-        render();
+        state.recommend === bestMatch(state.choices);
+        renderRecommendations();
     }
 }
 
@@ -141,28 +140,24 @@ function bestMatch(choices) {
 
 
 
-function renderRecommendations(state) {
-    // var name = state.recommend.name;
-    // var txt = "";
-    // if (state.recommend === index.toString()) {
+
+function renderRecommendations(state, choices) {
     return state.recommend.name + " is someone you want to check out!";
-    // } else {
-    //     console.log('not working')
-    // }
+
 }
 
 
 
-var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
+// var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
 
-function getDataFromApi(query, callback) {
-    var getJson = {
-        part: "snippet",
-        key: "AIzaSyCxu-HaWg7nUN9KkUD3ozKgOQdZHU3Pyy0",
-        q: ""
-    }
-    $.getJSON(youtubeUrl, getJson, callback)
-}
+// function getDataFromApi(query, callback) {
+//     var getJson = {
+//         part: "snippet",
+//         key: "AIzaSyCxu-HaWg7nUN9KkUD3ozKgOQdZHU3Pyy0",
+//         q: ""
+//     }
+//     $.getJSON(youtubeUrl, getJson, callback)
+// }
 
 
 // displays choices
@@ -195,6 +190,7 @@ function submitButtonHandler() {
 
 function recommendHandler() {
     bestMatch();
+
 }
 
 
