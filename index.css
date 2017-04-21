@@ -1,5 +1,14 @@
 * {
     box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    color: red;
+    text-shadow: 1px 1px black;
+}
+
+body {
     background-color: black;
     color: white;
 }
