@@ -30,8 +30,6 @@ function goNext(state) {
     } else {
         //this needs to display the recommendations
         //after the quiz is complete
-        // TODO: Make sure that current question is not set to last question
-        //Change the state and not the UI 
         $('.questions').hide();
         $('.choices').hide();
         console.log("are you working")
@@ -78,14 +76,12 @@ function render() {
     $('.buttons').html(renderButton(state));
     $('.beginButton').click(beginButtonHandler);
     $('.submitButton').click(submitButtonHandler);
-    $('.nextButton').click(goNextHandler);
     $('.finishButton').click(recommendHandler)
 
 
 }
 var beginButtonTemplate = '<input class="beginButton" type="button" value="Begin">';
 var submitButtonTemplate = '<input class="submitButton" type="button" value="Submit">';
-var nextButtonTemplate = '<input class="nextButton" type="button" value="Next">';
 var finishButtonTemplate = '<input class="finishButton" type="button" value="Finish">';
 
 function renderButton(state) {
@@ -98,8 +94,6 @@ function renderButton(state) {
 
     } else if (state.hasRecommendations()) {
         buttons.push(finishButtonTemplate)
-    } else {
-        (buttons.push(nextButtonTemplate));
     }
     return buttons.join("");
 }
@@ -189,6 +183,8 @@ function submitButtonHandler() {
     var choice = $('input[name=choices]:checked').val();
     if (choice !== undefined) {
         select(choice);
+        goNext(state);
+
     }
     render();
 
@@ -199,12 +195,6 @@ function recommendHandler() {
     // bestMatch();
     render();
 
-}
-
-
-function goNextHandler() {
-    goNext(state);
-    render();
 }
 
 render();

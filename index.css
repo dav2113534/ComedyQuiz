@@ -2,10 +2,20 @@
     box-sizing: border-box;
 }
 
+
+/*
+design needs to be responsive
+media queries
+*/
+
 header {
     text-align: center;
     color: red;
     text-shadow: 1px 1px black;
+}
+
+.img {
+    position: relative;
 }
 
 body {
