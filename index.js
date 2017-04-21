@@ -32,8 +32,11 @@ function goNext(state) {
         //after the quiz is complete
         // TODO: Make sure that current question is not set to last question
         //Change the state and not the UI 
-        state.recommend === bestMatch(state.choices);
-        renderRecommendations();
+        // state.recommend === bestMatch(state.choices)
+        console.log("are you working")
+        state.recommend = bestMatch(state.choices);
+        // renderRecommendations();
+        render();
     }
 }
 
@@ -73,6 +76,7 @@ function render() {
     $('.beginButton').click(beginButtonHandler);
     $('.submitButton').click(submitButtonHandler);
     $('.nextButton').click(goNextHandler);
+    $('.finishButton').click(recommendHandler)
 
 
 }
@@ -189,7 +193,7 @@ function submitButtonHandler() {
 }
 
 function recommendHandler() {
-    bestMatch();
+    // bestMatch();
 
 }
 

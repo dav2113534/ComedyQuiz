@@ -28,7 +28,6 @@ var state = {
         choices: ["Yes", "No"]
     }],
     currentQuestion: -1,
-
     choices: [],
     recommend: undefined,
     currentQuestionChoice: function () {
