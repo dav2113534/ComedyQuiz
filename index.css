@@ -6,16 +6,20 @@
 
 .beginButton {
     font-size: 16px;
+    border-radius: 60%;
 }
 
 .submitButton {
     font-size: 16px;
+    border-radius: 60%;
 }
 
 .nextButton {
     font-size: 16px;
+    border-radius: 60%;
 }
 
 .finishButton {
     font-size: 16px;
+    border-radius: 60%;
 }
