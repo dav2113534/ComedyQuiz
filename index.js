@@ -32,8 +32,8 @@ function goNext(state) {
         //after the quiz is complete
         // TODO: Make sure that current question is not set to last question
         //Change the state and not the UI 
-$('.questions').hide();
-$('.choices').hide();
+        $('.questions').hide();
+        $('.choices').hide();
         console.log("are you working")
         state.recommend = bestMatch(state.choices);
         //not displaying recommendations 
