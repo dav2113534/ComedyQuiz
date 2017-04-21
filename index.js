@@ -32,11 +32,13 @@ function goNext(state) {
         //after the quiz is complete
         // TODO: Make sure that current question is not set to last question
         //Change the state and not the UI 
-        // state.recommend === bestMatch(state.choices)
+
         console.log("are you working")
         state.recommend = bestMatch(state.choices);
-        // renderRecommendations();
-        render();
+        //not displaying recommendations 
+        state.recommend;
+        renderRecommendations(state);
+        console.log("hi")
     }
 }
 
@@ -146,7 +148,7 @@ function bestMatch(choices) {
 
 
 function renderRecommendations(state, choices) {
-    return state.recommend.name + " is someone you want to check out!";
+    return $('.recommendation').text(state.recommend.name + " is someone you should check out!");
 
 }
 
@@ -194,6 +196,7 @@ function submitButtonHandler() {
 
 function recommendHandler() {
     // bestMatch();
+    render();
 
 }
 
