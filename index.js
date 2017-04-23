@@ -10,7 +10,7 @@ function select(choice) {
 }
 
 
-//Goes to the next question 
+//Determines the next question and returns false if not
 function nextQuestion(state) {
     var next = state.currentQuestion + 1;
     if (state.currentQuestion !== state.quiz.length - 1) {
@@ -24,21 +24,15 @@ function nextQuestion(state) {
 //Goes to next question 
 function goNext(state) {
     var next = nextQuestion(state);
+
     if (next !== false) {
         state.currentQuestion = next;
-        render();
     } else {
+        state.done = true;
         //this needs to display the recommendations
         //after the quiz is complete
-        $('.questions').hide();
-        $('.choices').hide();
-        console.log("are you working")
-        state.recommend = bestMatch(state.choices);
-        //not displaying recommendations 
-        state.recommend;
-        renderRecommendations(state);
-        console.log("hi")
     }
+    render();
 }
 
 
@@ -69,8 +63,15 @@ function render() {
     if (display !== undefined) {
         $('.questions').text(display.Question);
         renderChoices(display.choices);
+    }
+
+    if (state.done && !state.hasRecommendations()) {
+        state.recommend = bestMatch(state.choices);
+        render();
     } else if (state.hasRecommendations()) {
-        $('.recommendation').text(renderRecommendations(state));
+        renderRecommendations(state);
+        $('.questions').hide();
+        $('.choices').hide();
     }
 
     $('.buttons').html(renderButton(state));
@@ -142,7 +143,7 @@ function bestMatch(choices) {
 
 
 
-function renderRecommendations(state, choices) {
+function renderRecommendations(state) {
     return $('.recommendation').text(state.recommend.name + " is someone you should check out!");
 
 }
@@ -198,3 +199,11 @@ function recommendHandler() {
 }
 
 render();
+
+/* Test Functions */
+function setChoicesForLouiseCK() {
+    state.choices = recommendation[0].choices;
+    state.currentQuestion = state.quiz.length - 1;
+    state.done = true;
+    render();
+}

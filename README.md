@@ -10,4 +10,8 @@ Feedback
 
 
 4-21-2017 
--Need to remove one of the buttons 
+-Add something playful for the buttons to bring it to life.
+-Add a background vid
+-Make responsive for mobile 
+-Return a youtube video
+
