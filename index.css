@@ -30,6 +30,7 @@ body {
 .questions {
     text-align: center;
 }
+
 .recommendation {
     text-align: center;
 }
@@ -41,3 +42,4 @@ body {
 .submitButton {
     border-radius: 60%
 }
+
