@@ -9,8 +9,10 @@ Feedback
  Lock conversation
 
 
-4-21-2017 
+4-24-2017 
 -Add something playful for the buttons to bring it to life.
--Add a background vid
 -Make responsive for mobile 
+-Add api to display recommendation videos from youtube
+-Need to video to fill screen
+
 

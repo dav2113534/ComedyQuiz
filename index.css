@@ -77,7 +77,7 @@ body {
 
 @media (max-width: 767px) {
   .fullscreen-bg {
-    background: url('../img/videoframe.jpg') center center / cover no-repeat;
+    background: url('https://d2v9y0dukr6mq2.cloudfront.net/video/preview/romanian-dancers-performing-on-stage_b148htoeh__PM.mp4') center center / cover no-repeat;
   }
 
   .fullscreen-bg__video {
