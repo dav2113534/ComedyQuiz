@@ -50,10 +50,10 @@ function renderChoice(choice, index) {
 
     }
     return (
-        '<li>' +
+        '<ul>' + '<label>' +
         '<input type="radio"' + disabled + ' name="choices" ' + checked + ' value="' + index + '" required>' +
-        '<label>' + choice + '</label>' +
-        '</li>'
+         choice + '</label>' +
+        '</ul>'
     )
 }
 
