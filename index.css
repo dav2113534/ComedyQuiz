@@ -24,8 +24,20 @@ body {
     font-size: 16px;
     text-align: center;
     border-radius: 60%;
+    margin-top: 50px;
 }
 
 .questions {
     text-align: center;
+}
+.recommendation {
+    text-align: center;
+}
+
+.beginButton {
+    border-radius: 60%;
+}
+
+.submitButton {
+    border-radius: 60%
 }
