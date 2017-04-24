@@ -52,7 +52,7 @@ function renderChoice(choice, index) {
     return (
         '<ul>' + '<label>' +
         '<input type="radio"' + disabled + ' name="choices" ' + checked + ' value="' + index + '" required>' +
-         choice + '</label>' +
+        choice + '</label>' +
         '</ul>'
     )
 }
