@@ -8,14 +8,14 @@ media queries?"
 */
   
   header {
-    color: red;
+    color: #7C4A89;
     text-shadow: 1px 1px black;
     text-align: center;
   }
   
   body {
     background-color: black;
-    color: purple;
+    color: #260d2a;
     position: absolute;
   }
   
@@ -24,6 +24,7 @@ media queries?"
     text-align: center;
     border-radius: 60%;
     margin-top: 50px;
+    padding-bottom: 10px;
   }
   
   .questions {
@@ -36,11 +37,16 @@ media queries?"
   
   .beginButton {
     border-radius: 60%;
+    background-color: #794996;
+    height: 50px;
+    width: 100px;
   }
   
   .submitButton {
     border-radius: 60%;
-    background-color: brown; 
+    background-color: #8330A0;
+    height: 50px;
+    width: 100px;
   }
   
   .fullscreenVideo {
@@ -52,13 +58,13 @@ media queries?"
     width: auto;
     height: auto;
     z-index: -100;
-    background: url(https://d2v9y0dukr6mq2.cloudfront.net/video/preview/romanian-dancers-performing-on-stage_b148htoeh__PM.mp4) no-repeat;
+    background: url(https://d1235ca2z646oc.cloudfront.net/videos/processed/34/A-Slow-Week-HD.mp4.mp4) no-repeat;
     background-size: cover;
   }
-
+  
   main {
-    background-color: lightgrey; 
-    border-radius: 11px; 
+    background-color: #9669A0;
+    border-radius: 11px;
     padding: 2px 10px;
   }
   /*@media only screen and (min-width: 640px) {
