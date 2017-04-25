@@ -48,20 +48,27 @@ media queries?"
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
+    width: auto;
     height: auto;
     z-index: -100;
     background: url(https://d2v9y0dukr6mq2.cloudfront.net/video/preview/romanian-dancers-performing-on-stage_b148htoeh__PM.mp4) no-repeat;
     background-size: cover;
+    /*position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    background: url(https://d2v9y0dukr6mq2.cloudfront.net/video/preview/romanian-dancers-performing-on-stage_b148htoeh__PM.mp4) no-repeat;
+    background-size: cover;*/
   }
-  
-  @media (min-aspect-ratio: 16/9) {
+  /*@media only screen and (min-width: 640px) {
     .fullscreenVideo {
       height: 300%;
-      top: -100%;
     }
   }
   
-  @media (max-aspect-ratio: 16/9) {
+  @media only screen and (min-width: 800px) {
     .fullscreenVideo {
       width: 300%;
       left: -100%;
@@ -72,4 +79,4 @@ media queries?"
     .fullscreenVideo {
       background: url('https://d2v9y0dukr6mq2.cloudfront.net/video/preview/romanian-dancers-performing-on-stage_b148htoeh__PM.mp4');
     }
-  }
+  }*/
