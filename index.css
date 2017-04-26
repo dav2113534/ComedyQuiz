@@ -8,17 +8,18 @@ media queries?"
 */
   
   header {
-    color: #7C4A89;
+    color: #710BA0;
     text-shadow: 1px 1px black;
     text-align: center;
     font-size: 40px;
+    font-family: 'Lobster', cursive;
   }
   
   body {
     width: 68%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15%;
+    margin-top: 3%;
   }
   
   .buttons {
@@ -31,21 +32,27 @@ media queries?"
   
   .questions {
     text-align: center;
-    color: #7F30A0;
+    color: #4600A0;
+    font-family: 'Lobster Two', cursive;
+    font-size: 40px;
+    font-weight: bold;
   }
   
   .recommendation {
     text-align: center;
-    color: #280D2A;
+    color: #7C4A89;
+    font-family: 'Lobster Two', cursive;
   }
   
   .choices {
-    color: #9D00A0;
+    color: #4535B7;
+    font-family: 'Lobster Two', cursive;
+    font-size: 40px;
   }
   
   .beginButton {
     border-radius: 60%;
-    background-color: #794996;
+    background-color: #B75A8C;
     height: 50px;
     width: 100px;
     font-size: 20px;
@@ -53,7 +60,7 @@ media queries?"
   
   .submitButton {
     border-radius: 60%;
-    background-color: #8330A0;
+    background-color: #B75A8C;
     height: 50px;
     width: 100px;
     font-size: 20px;
@@ -61,19 +68,18 @@ media queries?"
   
   .fullscreenVideo {
     position: fixed;
-    right: 0;
-    bottom: 0;
+    top: 50%;
+    left: 50%;
+    z-index: -100;
     min-width: 100%;
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -100;
-    background: url(https://d1235ca2z646oc.cloudfront.net/videos/processed/34/A-Slow-Week-HD.mp4.mp4) no-repeat;
-    background-size: cover;
+    transform: translate(-50%, -50%);
   }
   
   main {
-    background-color: #9669A0;
+    background-color: #AD4B3A;
     border-radius: 11px;
     display: inline;
   }
@@ -85,8 +91,8 @@ media queries?"
   
   @media only screen and (min-width: 800px) {
     .fullscreenVideo {
-      width: 300%;
-      left: -100%;
+      width: 306%;
+      left: -103%;
     }
   }
   
