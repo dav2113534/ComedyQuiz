@@ -36,6 +36,7 @@ media queries?"
     font-family: 'Lobster Two', cursive;
     font-size: 40px;
     font-weight: bold;
+    text-shadow: 1px 1px black;
   }
   
   .recommendation {
@@ -48,6 +49,7 @@ media queries?"
     color: #4535B7;
     font-family: 'Lobster Two', cursive;
     font-size: 40px;
+    text-shadow: 1px 1px black;
   }
   
   .beginButton {
@@ -56,6 +58,7 @@ media queries?"
     height: 50px;
     width: 100px;
     font-size: 20px;
+    font-family: 'Bigshot One', cursive;
   }
   
   .submitButton {
@@ -64,6 +67,7 @@ media queries?"
     height: 50px;
     width: 100px;
     font-size: 20px;
+    font-family: 'Bigshot One', cursive;
   }
   
   .fullscreenVideo {
