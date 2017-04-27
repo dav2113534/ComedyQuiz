@@ -101,21 +101,3 @@ media queries?"
       max-width: 640px;
     }
   }
-  /*@media only screen and (min-width: 640px) {
-    .fullscreenVideo {
-      height: 300%;
-    }
-  }
-  
-  @media only screen and (min-width: 800px) {
-    .fullscreenVideo {
-      width: 306%;
-      left: -103%;
-    }
-  }
-  
-  @media (max-width: 767px) {
-    .fullscreenVideo {
-      background: url('https://d2v9y0dukr6mq2.cloudfront.net/video/preview/romanian-dancers-performing-on-stage_b148htoeh__PM.mp4');
-    }
-  }*/
