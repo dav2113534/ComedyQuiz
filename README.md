@@ -1,5 +1,2 @@
 
-4-26-2017 
--Add api to display recommendation videos from youtube (make it 
--Follow 30 minute rule!!!!
-
+I'm a huge comedy fan, so I wanted to create a quiz(survey) to recommend some comedians to check out. Hope you enjoy! 
