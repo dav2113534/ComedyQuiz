@@ -11,8 +11,8 @@ media queries?"
     color: #710BA0;
     text-shadow: 1px 1px black;
     text-align: center;
-    font-size: 40px;
     font-family: 'Lobster', cursive;
+    font-size: 2em;
   }
   
   body {
@@ -20,10 +20,22 @@ media queries?"
     margin-left: auto;
     margin-right: auto;
     margin-top: 3%;
+    font-size: x-large;
+  }
+  
+  @media (max-width: 1000px) {
+    body {
+      font-size: large;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    body {
+      font-size: small;
+    }
   }
   
   .buttons {
-    font-size: 16px;
     text-align: center;
     border-radius: 60%;
     margin-top: 50px;
@@ -34,7 +46,6 @@ media queries?"
     text-align: center;
     color: #4600A0;
     font-family: 'Lobster Two', cursive;
-    font-size: 40px;
     font-weight: bold;
     text-shadow: 1px 1px black;
   }
@@ -43,30 +54,21 @@ media queries?"
     text-align: center;
     color: #7C4A89;
     font-family: 'Lobster Two', cursive;
+    text-shadow: 1px 1px black;
   }
   
   .choices {
     color: #4535B7;
     font-family: 'Lobster Two', cursive;
-    font-size: 40px;
     text-shadow: 1px 1px black;
   }
   
-  .beginButton {
+  .buttons input {
     border-radius: 60%;
     background-color: #B75A8C;
     height: 50px;
     width: 100px;
-    font-size: 20px;
-    font-family: 'Bigshot One', cursive;
-  }
-  
-  .submitButton {
-    border-radius: 60%;
-    background-color: #B75A8C;
-    height: 50px;
-    width: 100px;
-    font-size: 20px;
+    font-size: 1.033em;
     font-family: 'Bigshot One', cursive;
   }
   
@@ -86,6 +88,18 @@ media queries?"
     background-color: #AD4B3A;
     border-radius: 11px;
     display: inline;
+  }
+  
+  @media only screen and (min-width: 640px) {
+    header {
+      max-width: 640px;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin: 0 auto;
+    }
+    .choices {
+      max-width: 640px;
+    }
   }
   /*@media only screen and (min-width: 640px) {
     .fullscreenVideo {
