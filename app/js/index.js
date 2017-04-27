@@ -150,16 +150,16 @@ function renderRecommendations(state) {
 
 
 
-// var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
+var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
 
-// function getDataFromApi(query, callback) {
-//     var getJson = {
-//         part: "snippet",
-//         key: "AIzaSyCxu-HaWg7nUN9KkUD3ozKgOQdZHU3Pyy0",
-//         q: ""
-//     }
-//     $.getJSON(youtubeUrl, getJson, callback)
-// }
+function getDataFromApi(query, callback) {
+    var getJson = {
+        part: "snippet",
+        key: "AIzaSyCxu-HaWg7nUN9KkUD3ozKgOQdZHU3Pyy0",
+        q: ""
+    }
+    $.getJSON(youtubeUrl, getJson, callback)
+}
 
 
 // displays choices

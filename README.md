@@ -1,8 +1,5 @@
 
-4-24-2017 
--Make responsive for mobile (review responsive design)
--Add api to display recommendation videos from youtube (make it simple, make it fast)
--Draw out how I want the design to look for desktop and mobile
--Pick out an awesome font, maybe comedy font something fancy(google fonts)
+4-26-2017 
+-Add api to display recommendation videos from youtube (make it 
 -Follow 30 minute rule!!!!
 
