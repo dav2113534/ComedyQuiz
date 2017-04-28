@@ -204,7 +204,7 @@ var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
 
 
 function getDataFromApi(query, callback) {
-    var a = $(".recommendation").val();
+    var a = state.recommend.name;
     var getJson = {
         part: "snippet",
         key: "AIzaSyCxu-HaWg7nUN9KkUD3ozKgOQdZHU3Pyy0",
@@ -219,7 +219,7 @@ function displayData(data) {
     if (data.items) {
         data.items.forEach(function (item) {
             result += '<p>' + item.snippet.title +
-                data.items.videoId + '</p>';
+                data.item.videoId + '</p>';
         })
     } else {
         result += '<p> No Results </p>';
