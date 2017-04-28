@@ -202,27 +202,32 @@ function setChoicesForLouiseCK() {
 
 var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
 
+
 function getDataFromApi(query, callback) {
     var a = $(".recommendation").val();
     var getJson = {
         part: "snippet",
         key: "AIzaSyCxu-HaWg7nUN9KkUD3ozKgOQdZHU3Pyy0",
         q: a,
+        type: "video"
     }
     $.getJSON(youtubeUrl, getJson, callback)
 }
 
-function displayData(data) {
-    var results = '';
-    if (data.items) {
-        data.items.forEach(function (item) {
-            result += '<p>' + item.snippet.title + '</p>';
-        })
-    } else {
-        result += '<p> No results </p>';
-    }
-    $('recommendation').html(result);
-}
+
+
+
+// function displayData(data) {
+//     var results = '';
+//     if (data.items) {
+//         data.items.forEach(function (item) {
+//             result += '<p>' + item.snippet.title + '</p>';
+//         })
+//     } else {
+//         result += '<p> No results </p>';
+//     }
+//     $('recommendation').html(result);
+// }
 
 // function watchSubmit() {
 //     $('.js-search-form').submit(function (e) {
