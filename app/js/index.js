@@ -150,18 +150,6 @@ function renderRecommendations(state) {
 
 
 
-var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
-
-function getDataFromApi(query, callback) {
-    var getJson = {
-        part: "snippet",
-        key: "AIzaSyCxu-HaWg7nUN9KkUD3ozKgOQdZHU3Pyy0",
-        q: ""
-    }
-    $.getJSON(youtubeUrl, getJson, callback)
-}
-
-
 // displays choices
 
 function renderChoices(choices) {
@@ -186,6 +174,7 @@ function submitButtonHandler() {
         select(choice);
         goNext(state);
 
+
     }
     render();
 
@@ -207,3 +196,59 @@ function setChoicesForLouiseCK() {
     state.done = true;
     render();
 }
+
+//will gather videos from youtube that the user would enjoy
+//based on their answer from quiz
+
+var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
+
+function getDataFromApi(query, callback) {
+    var a = $(".recommendation").val();
+    var getJson = {
+        part: "snippet",
+        key: "AIzaSyCxu-HaWg7nUN9KkUD3ozKgOQdZHU3Pyy0",
+        q: a,
+    }
+    $.getJSON(youtubeUrl, getJson, callback)
+}
+
+function displayData(data) {
+    var results = '';
+    if (data.items) {
+        data.items.forEach(function (item) {
+            result += '<p>' + item.snippet.title + '</p>';
+        })
+    } else {
+        result += '<p> No results </p>';
+    }
+    $('recommendation').html(result);
+}
+
+// function watchSubmit() {
+//     $('.js-search-form').submit(function (e) {
+//         e.preventDefault();
+//         var query = $(this).find('.js-query').val();
+//         getDataFromApi(query, displayData);
+//     });
+// }
+
+// $(function () {
+//     watchSubmit();
+// });
+
+// function handleAPILoaded() {
+//     $('.finish').attr('disabled', false);
+// }
+
+// function search() {
+//     var q = $('.recommendation').val();
+//     var request = gapi.client.youtube.search.list({
+//         q: q,
+//         part: 'snippet'
+//     })
+// }
+
+// request.execute(function (response) {
+//     var str = JSON.stringify(response.result);
+//     $('.results').html('</p>' + str + '</p>')
+// })
