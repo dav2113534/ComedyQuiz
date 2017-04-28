@@ -214,6 +214,19 @@ function getDataFromApi(query, callback) {
     $.getJSON(youtubeUrl, getJson, callback)
 }
 
+function displayData(data) {
+    var result = '';
+    if (data.items) {
+        data.items.forEach(function (item) {
+            result += '<p>' + item.snippet.title +
+                data.items.videoId + '</p>';
+        })
+    } else {
+        result += '<p> No Results </p>';
+    }
+    $('.recommendation').html(result);
+}
+
 
 
 
