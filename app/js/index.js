@@ -182,7 +182,7 @@ function submitButtonHandler() {
 }
 
 function finishHandler() {
-    getDataFromApi(query, displayData);
+    getDataFromApi(displayData);
 }
 
 function recommendHandler() {
@@ -206,7 +206,7 @@ function setChoicesForLouiseCK() {
 
 var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
 
-function getDataFromApi(query, callback) {
+function getDataFromApi(callback) {
     var comedian = state.recommend.name;
     var getJson = {
         part: 'snippet',
@@ -221,7 +221,7 @@ function displayData(data) {
     var result = '';
     if (data.items || data.snippet) {
         data.items.forEach(function (item) {
-            result += '<p>' + snippet.title +
+            result += '<p>' +
                 item.VideoId + '</p>';
         })
     } else {
@@ -233,17 +233,6 @@ function displayData(data) {
 
 
 
-// function displayData(data) {
-//     var results = '';
-//     if (data.items) {
-//         data.items.forEach(function (item) {
-//             result += '<p>' + item.snippet.title + '</p>';
-//         })
-//     } else {
-//         result += '<p> No results </p>';
-//     }
-//     $('recommendation').html(result);
-// }
 
 // function watchSubmit() {
 //     $('.js-search-form').submit(function (e) {
@@ -255,21 +244,4 @@ function displayData(data) {
 
 // $(function () {
 //     watchSubmit();
-// });
-
-// function handleAPILoaded() {
-//     $('.finish').attr('disabled', false);
-// }
-
-// function search() {
-//     var q = $('.recommendation').val();
-//     var request = gapi.client.youtube.search.list({
-//         q: q,
-//         part: 'snippet'
-//     })
-// }
-
-// request.execute(function (response) {
-//     var str = JSON.stringify(response.result);
-//     $('.results').html('</p>' + str + '</p>')
 // })
