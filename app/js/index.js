@@ -217,18 +217,20 @@ function getDataFromApi(query, callback) {
     $.getJSON(youtubeUrl, getJson, callback)
 }
 
+function displayData(data) {
+    var result = '';
+    if (data.items || data.snippet) {
+        data.items.forEach(function (item) {
+            result += '<p>' + snippet.title +
+                item.VideoId + '</p>';
+        })
+    } else {
+        result += '<p> No Results</p>';
+    }
+    $('.recommendation').html(result);
+}
 
 
-// function getDataFromApi(query, callback) {
-//     var a = state.recommend.name;
-//     var getJson = {
-//         part: "snippet",
-//         key: "AIzaSyCxu-HaWg7nUN9KkUD3ozKgOQdZHU3Pyy0",
-//         q: a,
-//         type: "video"
-//     }
-//     $.getJSON(youtubeUrl, getJson, callback)
-// }
 
 
 // function displayData(data) {
