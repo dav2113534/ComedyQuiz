@@ -77,7 +77,7 @@ function render() {
     $('.buttons').html(renderButton(state));
     $('.beginButton').click(beginButtonHandler);
     $('.submitButton').click(submitButtonHandler);
-    $('.finishButton').click(recommendHandler)
+    $('.finishButton').click(finishHandler);
 
 
 }
@@ -181,6 +181,10 @@ function submitButtonHandler() {
 
 }
 
+function finishHandler(){
+    getDataFromApi(query, displayData);
+}
+
 function recommendHandler() {
     // bestMatch();
     render();
@@ -202,32 +206,27 @@ function setChoicesForLouiseCK() {
 
 var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
 
-
-function getDataFromApi(query, callback) {
-    var a = state.recommend.name;
+function getDataFromApi(query, callback){
+    var comedian = state.recommend.name; 
     var getJson = {
-        part: "snippet",
-        key: "AIzaSyCxu-HaWg7nUN9KkUD3ozKgOQdZHU3Pyy0",
-        q: a,
-        type: "video"
+        part: 'snippet',
+        key: 'AIzaSyCxu-HaWg7nUN9KkUD3ozKgOQdZHU3Pyy0',
+        q: comedian
     }
-    $.getJSON(youtubeUrl, getJson, callback)
-}
-
-function displayData(data) {
-    var result = '';
-    if (data.items) {
-        data.items.forEach(function (item) {
-            result += '<p>' + item.snippet.title +
-                data.item.videoId + '</p>';
-        })
-    } else {
-        result += '<p> No Results </p>';
-    }
-    $('.recommendation').html(result);
 }
 
 
+
+// function getDataFromApi(query, callback) {
+//     var a = state.recommend.name;
+//     var getJson = {
+//         part: "snippet",
+//         key: "AIzaSyCxu-HaWg7nUN9KkUD3ozKgOQdZHU3Pyy0",
+//         q: a,
+//         type: "video"
+//     }
+//     $.getJSON(youtubeUrl, getJson, callback)
+// }
 
 
 // function displayData(data) {
