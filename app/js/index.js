@@ -181,7 +181,7 @@ function submitButtonHandler() {
 
 }
 
-function finishHandler(){
+function finishHandler() {
     getDataFromApi(query, displayData);
 }
 
@@ -206,13 +206,15 @@ function setChoicesForLouiseCK() {
 
 var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
 
-function getDataFromApi(query, callback){
-    var comedian = state.recommend.name; 
+function getDataFromApi(query, callback) {
+    var comedian = state.recommend.name;
     var getJson = {
         part: 'snippet',
         key: 'AIzaSyCxu-HaWg7nUN9KkUD3ozKgOQdZHU3Pyy0',
-        q: comedian
+        q: comedian,
+        type: "video"
     }
+    $.getJSON(youtubeUrl, getJson, callback)
 }
 
 
