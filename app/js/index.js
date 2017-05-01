@@ -29,8 +29,7 @@ function goNext(state) {
         state.currentQuestion = next;
     } else {
         state.done = true;
-        //this needs to display the recommendations
-        //after the quiz is complete
+       
     }
     render();
 }
