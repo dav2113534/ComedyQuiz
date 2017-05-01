@@ -84,6 +84,13 @@
     padding-bottom: 20px;
   }
   
+  .intro {
+    text-align: center;
+    text-shadow: 1px 1px black;
+    color: #35035A;
+  }
+  /* Meida queries*/
+  
   @media only screen and (min-width: 640px) {
     header {
       max-width: 640px;
@@ -99,6 +106,7 @@
   @media (max-width: 1000px) {
     body {
       font-size: large;
+      font-family: 'Righteous', cursive;
     }
   }
   

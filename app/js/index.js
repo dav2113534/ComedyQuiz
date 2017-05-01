@@ -160,6 +160,7 @@ function renderChoices(choices) {
 
 //Begins the quiz 
 function beginButtonHandler() {
+    $('.intro').hide();
     goNext(state);
     render();
 
