@@ -1,7 +1,7 @@
   * {
     box-sizing: border-box;
   }
-
+  
   header {
     color: #710BA0;
     text-shadow: 1px 1px black;
@@ -17,8 +17,6 @@
     margin-top: 3%;
     font-size: x-large;
   }
-  
-
   
   .buttons {
     text-align: center;
@@ -47,6 +45,7 @@
     color: #4535B7;
     font-family: 'Lobster Two', cursive;
     text-shadow: 1px 1px black;
+    text-align: inherit;
   }
   
   .buttons input {
@@ -75,5 +74,3 @@
     border-radius: 11px;
     display: inline;
   }
-  
- 

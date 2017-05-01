@@ -8,6 +8,9 @@
     .choices {
       max-width: 640px;
     }
+    .col{
+        min-width: 100%;
+    }
   }
 
     @media (max-width: 1000px) {
@@ -19,6 +22,12 @@
   @media (max-width: 500px) {
     body {
       font-size: small;
+    }
+    .row{
+    max-width: 1000px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
     }
   }
 
