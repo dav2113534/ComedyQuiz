@@ -1,12 +1,7 @@
   * {
     box-sizing: border-box;
   }
-  /*
-design needs to be responsive
-media queries?"
-:
-*/
-  
+
   header {
     color: #710BA0;
     text-shadow: 1px 1px black;
@@ -23,17 +18,7 @@ media queries?"
     font-size: x-large;
   }
   
-  @media (max-width: 1000px) {
-    body {
-      font-size: large;
-    }
-  }
-  
-  @media (max-width: 500px) {
-    body {
-      font-size: small;
-    }
-  }
+
   
   .buttons {
     text-align: center;
@@ -55,6 +40,7 @@ media queries?"
     color: #7C4A89;
     font-family: 'Lobster Two', cursive;
     text-shadow: 1px 1px black;
+    display: inline-grid;
   }
   
   .choices {
@@ -90,14 +76,4 @@ media queries?"
     display: inline;
   }
   
-  @media only screen and (min-width: 640px) {
-    header {
-      max-width: 640px;
-      padding-left: 20px;
-      padding-right: 20px;
-      margin: 0 auto;
-    }
-    .choices {
-      max-width: 640px;
-    }
-  }
+ 

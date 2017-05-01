@@ -187,7 +187,6 @@ function finishHandler() {
 }
 
 function recommendHandler() {
-    // bestMatch();
     render();
 
 }
@@ -234,26 +233,3 @@ function displayData(data) {
     }
     $('.recommendation').html(result);
 }
-
-
-// function displayData(data) {
-//     var itemTemplate = (
-//         '<div class="result">'  + 
-//         '<a href="#"><img></a>' +
-//         '</div>'
-//     );
-//     var resultsHTML = "<p>No results</p>";
-
-//     if (data.items) {
-//         resultsHTML = data.items.map(function (item) {
-//             var itemHTML = $(itemTemplate);
-//             itemHTML.find('img').attr('src',item.snippet.title); 
-//             itemHTML.find('img').attr('src', item.snippet.thumbnails.medium.url);
-
-//             return itemHTML;
-//         });
-//     }
-
-
-//     $('.recommendation').html(resultsHTML);
-// }
