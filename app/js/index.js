@@ -29,7 +29,7 @@ function goNext(state) {
         state.currentQuestion = next;
     } else {
         state.done = true;
-       
+
     }
     render();
 }
@@ -102,16 +102,16 @@ function renderButton(state) {
 
 var recommendation = [{
     name: "Louis C.K",
-    choices: [1, 1, 2, 0, 1, 0, 1, 1, 1],
+    choices: [1, 1, 2, 0, 1, 0, 1],
 }, {
     name: "Dave Chapelle",
-    choices: [0, 0, 1, 0, 1, 0, 1, 1, 1]
+    choices: [0, 0, 1, 0, 1, 0, 1]
 }, {
     name: "Jim Gaffigan",
-    choices: [1, 2, 2, 1, 0, 1, 0, 0, 0]
+    choices: [1, 2, 2, 1, 0, 1, 0]
 }, {
     name: "Robin Williams",
-    choices: [3, 3, 1, 0, 1, 0, 1, 0, 1]
+    choices: [3, 3, 1, 0, 1, 0, 1]
 }];
 
 //compares choices array to recommendation array
@@ -208,7 +208,7 @@ function setChoicesForLouiseCK() {
 var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
 
 function getDataFromApi(callback) {
-    var comedian = state.recommend.name;
+    var comedian = state.recommend.name + 'comedian';
     var getJson = {
         part: 'snippet',
         key: 'AIzaSyCxu-HaWg7nUN9KkUD3ozKgOQdZHU3Pyy0',

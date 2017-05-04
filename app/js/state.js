@@ -20,12 +20,6 @@ var state = {
     }, {
         Question: "How do you feel about racial sterotypes?",
         choices: ["Don't like em", "Don't mind it"]
-    }, {
-        Question: "Do you enjoy improv?",
-        choices: ["Yes", "No"]
-    }, {
-        Question: "Do you enjoy both music and comedy",
-        choices: ["Yes", "No"]
     }],
     currentQuestion: -1,
     choices: [],
