@@ -55,6 +55,7 @@
     width: 100px;
     font-size: large;
     font-family: 'Bigshot One', cursive;
+    border-color: black;
   }
   
   .fullscreenVideo {
