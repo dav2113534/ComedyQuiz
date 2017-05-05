@@ -144,14 +144,6 @@ function bestMatch(choices) {
 
 
 
-// function resetQuiz(state){
-//     $('.finishButton').click(function(e){
-//         $(this).addClass('hidden');
-//         state.choices = [];
-//         state.recommend = undefined;
-//     })
-// }
-
 
 function renderRecommendations(state) {
     return $('.recommendation').text(state.recommend.name + " is someone you should check out!");

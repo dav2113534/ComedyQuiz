@@ -25,6 +25,10 @@
     padding-bottom: 10px;
   }
   
+  .finishButton {
+    margin-right: 1em;
+  }
+  
   .questions {
     text-align: center;
     color: #4600A0;
