@@ -77,12 +77,14 @@ function render() {
     $('.beginButton').click(beginButtonHandler);
     $('.submitButton').click(submitButtonHandler);
     $('.finishButton').click(finishHandler);
+    $('.resetButton').click(resetHandler);
 
 
 }
 var beginButtonTemplate = '<input class="beginButton" type="button" value="Begin">';
 var submitButtonTemplate = '<input class="submitButton" type="button" value="Submit">';
 var finishButtonTemplate = '<input class="finishButton" type="button" value="Finish">';
+var resetButtonTemplate = '<input class="resetButton" type="button" value="Reset">';
 
 function renderButton(state) {
     var buttons = [];
@@ -93,8 +95,9 @@ function renderButton(state) {
         buttons.push(submitButtonTemplate);
 
     } else if (state.hasRecommendations()) {
-        buttons.push(finishButtonTemplate)
-    }
+        buttons.push(finishButtonTemplate);
+        buttons.push(resetButtonTemplate);
+    } 
     return buttons.join("");
 }
 
@@ -141,6 +144,14 @@ function bestMatch(choices) {
 
 
 
+// function resetQuiz(state){
+//     $('.finishButton').click(function(e){
+//         $(this).addClass('hidden');
+//         state.choices = [];
+//         state.recommend = undefined;
+//     })
+// }
+
 
 function renderRecommendations(state) {
     return $('.recommendation').text(state.recommend.name + " is someone you should check out!");
@@ -184,7 +195,12 @@ function submitButtonHandler() {
 
 function finishHandler() {
     getDataFromApi(displayData);
+   $('.finishButton').hide(); 
 
+}
+
+function resetHandler() {
+    window.location.reload(true);
 }
 
 function recommendHandler() {
@@ -208,7 +224,7 @@ function setChoicesForLouiseCK() {
 var youtubeUrl = "https://www.googleapis.com/youtube/v3/search";
 
 function getDataFromApi(callback) {
-    var comedian = state.recommend.name + 'comedian';
+    var comedian = state.recommend.name;
     var getJson = {
         part: 'snippet',
         key: 'AIzaSyCxu-HaWg7nUN9KkUD3ozKgOQdZHU3Pyy0',
