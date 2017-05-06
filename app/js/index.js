@@ -166,11 +166,12 @@ function beginButtonHandler() {
     $('.intro').hide();
     goNext(state);
     $('.fullscreenVideo').hide();
+    $('.fullscreenVideo').pause();
     render();
 
-
-
 };
+
+
 
 
 function submitButtonHandler() {

@@ -73,6 +73,27 @@
     height: auto;
     transform: translate(-50%, -50%);
     filter: blur(10px);
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+  }
+  
+  main::before {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    height: 100%;
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -200;
+    display: block;
+    background-image: url("../../assets/stage-image.jpg")
   }
   
   main {
