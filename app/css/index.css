@@ -123,4 +123,10 @@
       margin: 0 auto;
       width: 100%;
     }
+    .buttons input {
+      margin-bottom: 1em;
+    }
+    .resetButton {
+      margin-right: 1em;
+    }
   }
