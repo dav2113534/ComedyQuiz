@@ -1,11 +1,6 @@
 q1,q2,q3,q4,q5,q6,q7,comedian
 
-questions 4-7 are only 0 or 1
 
-Email Derek and explain in detail of 
-my intentions with this
-Create new data source and ml model 
-Need at least 5 batch of answers per comedian 
 1,1,1,0,0,1,1,0
 1,1,1,0,1,0,0,0
 1,1,2,0,1,1,0,0
