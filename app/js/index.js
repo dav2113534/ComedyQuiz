@@ -97,7 +97,7 @@ function renderButton(state) {
     } else if (state.hasRecommendations()) {
         buttons.push(finishButtonTemplate);
         buttons.push(resetButtonTemplate);
-    } 
+    }
     return buttons.join("");
 }
 
@@ -128,7 +128,7 @@ function match(recommendation, choices) {
 }
 
 // recommendation is a array object
-function bestMatch(choices) {
+exports.bestMatch=function bestMatch(choices) {
     var matchChoices = function (arr) {
         return match(arr, choices);
     };
@@ -189,7 +189,7 @@ function submitButtonHandler() {
 
 function finishHandler() {
     getDataFromApi(displayData);
-   $('.finishButton').hide(); 
+    $('.finishButton').hide();
 
 }
 
@@ -202,7 +202,7 @@ function recommendHandler() {
 
 }
 
-render();
+//render();
 
 /* Test Functions */
 function setChoicesForLouiseCK() {
