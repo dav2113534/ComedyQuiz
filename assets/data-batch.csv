@@ -1,22 +1,9 @@
 q1,q2,q3,q4,q5,q6,q7,comedian
-1,1,2,0,1,0,1,0 4
-0,0,1,0,1,0,1,1 3
-1,2,2,1,0,1,0,2 3
-3,3,1,0,1,0,1,3 3
----
-// create retrain and uploand to S3
-// create new data source and use to retrain  
-//mode we're creating again 
+[1,2],1,[2,0],0,1,0,1,0 4
+[0,1],0,[1,0,2],0,1,0,1,1 3
+[1,2,0],2,[2,0],1,0,1,0,2 3
+[3,2,1],3,[1,3,2],0,1,0,1,3 3
 
-//check real time predictions 
 
-//We need to describe that we're using 
-// aws machine learning to give user 
-//better recomendations. (on landing pages)
-// add thumbs up and thumbs down option on given 
-// comedian 
-
-//send description on what i'm adding to derek
-//for approval 
 1,1,1,0,0,1,1,1
 
