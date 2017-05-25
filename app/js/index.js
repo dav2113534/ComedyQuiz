@@ -128,7 +128,7 @@ function match(recommendation, choices) {
 }
 
 // recommendation is a array object
-exports.bestMatch=function bestMatch(choices) {
+function bestMatch(choices) {
     var matchChoices = function (arr) {
         return match(arr, choices);
     };
