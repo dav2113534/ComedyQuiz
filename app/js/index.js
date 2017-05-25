@@ -202,7 +202,7 @@ function recommendHandler() {
 
 }
 
-//render();
+render();
 
 /* Test Functions */
 function setChoicesForLouiseCK() {
