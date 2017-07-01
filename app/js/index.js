@@ -162,7 +162,7 @@ function renderChoices(choices) {
 
 //Begins the quiz 
 function beginButtonHandler() {
-    $('header').hide();
+    $('.header').hide();
     $('.intro').hide();
     goNext(state);
     $('.fullscreenVideo').hide();
