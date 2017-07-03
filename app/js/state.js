@@ -20,17 +20,15 @@ var state = {
     }, {
         Question: "How do you feel about racial sterotypes?",
         choices: ["Don't like em", "Don't mind it"]
-    }, {
-        Question: "Do you enjoy improv?",
-        choices: ["Yes", "No"]
-    }, {
-        Question: "Do you enjoy both music and comedy",
-        choices: ["Yes", "No"]
     }],
     currentQuestion: -1,
     choices: [],
+    recommend: undefined,
     currentQuestionChoice: function () {
         return this.choices[this.currentQuestion];
+    },
+    //created function to check if recommend is undefined
+    hasRecommendations: function () {
+        return this.recommend !== undefined;
     }
-
 }

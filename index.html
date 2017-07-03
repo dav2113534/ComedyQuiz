@@ -5,23 +5,40 @@
     <title>Comedy Quiz Recommendation by David Palacios</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="index.css" rel="stylesheet">
+    <link href="app/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="app/css/float-grid.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 </head>
-<header>Who makes you laugh?</header>
-<figure>
-    <img class="img" src="http://cbshouston.files.wordpress.com/2013/05/134100900.jpg" />
-</figure>
-<form>
-    <h2 class="questions"></h2>
-    <ol class="choices"></ol>
-</form>
-<form class="buttons">
-</form>
 
 <body>
-    <script src="https://code.jquery.com/jquery.min.js"></script>
-    <script src="state.js"></script>
-    <script src="index.js"></script>
+    <main>
+        <header class="row">Who makes you laugh?</header>
+        <div class="intro">
+            <p> I'm a HUGE comedy fanatic!!  </p>
+            <p> So I took it upon myself to create a quiz that recommends a comedian to ya!! </p>
+            <p> Check it out!!</p>
+        </div>
+        <form class="design">
+            <div class="row">
+                <h2 class="recommendation"></h2>
+            </div>
+            <div class="row">
+                <h2 class="questions"></h2>
+            </div>
+            <div class="row">
+                <h3 class="choices"></h3>
+            </div>
+        </form>
+        <div class="row">
+            <form class="buttons">
+            </form>
+        </div> 
+    </main>
+    <video loop muted autoplay class="fullscreenVideo" src="assets/A-Slow-Week-HD.mp4" /video>
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <script src="app/js/state.js"></script>
+        <script src="app/js/index.js"></script>
 </body>
 
 </html>

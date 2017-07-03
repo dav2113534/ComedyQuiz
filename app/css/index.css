@@ -1,0 +1,152 @@
+  * {
+    box-sizing: border-box;
+  }
+  
+  header {
+    color: #710BA0;
+    text-shadow: 1px 1px black;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 2em;
+  }
+  
+  body {
+    width: 68%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    font-size: x-large;
+  }
+  
+  .buttons {
+    text-align: center;
+    border-radius: 60%;
+    margin-top: 50px;
+    padding-bottom: 10px;
+  }
+  
+  .finishButton {
+    margin-right: 1em;
+  }
+  
+  .questions {
+    text-align: center;
+    color: #4600A0;
+    font-family: 'Lobster Two', cursive;
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+  }
+  
+  .recommendation {
+    text-align: center;
+    color: #7C4A89;
+    font-family: 'Lobster Two', cursive;
+    text-shadow: 1px 1px black;
+    display: inline-grid;
+  }
+  
+  .choices {
+    color: #4535B7;
+    font-family: 'Lobster Two', cursive;
+    text-shadow: 1px 1px black;
+    text-align: inherit;
+  }
+  
+  .buttons input {
+    border-radius: 60%;
+    background-color: #B75A8C;
+    height: 50px;
+    width: 100px;
+    font-size: large;
+    font-family: 'Bigshot One', cursive;
+    border-color: black;
+  }
+  
+  .fullscreenVideo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: -100;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+  }
+  
+  main::before {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    height: 100%;
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -200;
+    display: block;
+  }
+  
+  main {
+    background-color: #AD4B3A;
+    border-radius: 11px;
+    display: inline;
+  }
+  
+  iframe {
+    display: block;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .intro {
+    text-align: center;
+    text-shadow: 1px 1px black;
+    color: #35035A;
+  }
+  /* Meida queries*/
+  
+  @media only screen and (min-width: 640px) {
+    header {
+      max-width: 640px;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin: 0 auto;
+    }
+    .choices {
+      max-width: 640px;
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    body {
+      font-size: large;
+      font-family: 'Righteous', cursive;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    body {
+      font-size: small;
+    }
+    iframe {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .buttons input {
+      margin-bottom: 1em;
+    }
+    .resetButton {
+      margin-right: 1em;
+    }
+  }
