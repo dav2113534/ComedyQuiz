@@ -165,7 +165,7 @@ function beginButtonHandler() {
     $('.header').hide();
     $('.intro').hide();
     goNext(state);
-    $('.fullscreenVideo').hide();
+    // $('.fullscreenVideo').hide();
     $('.fullscreenVideo').pause();
     render();
 
